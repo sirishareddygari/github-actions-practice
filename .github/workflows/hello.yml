@@ -1,4 +1,4 @@
-name: GitHub Actions Practice - Lab 2
+name: GitHub Actions Practice - Lab 3
 
 on:
   push:
@@ -6,21 +6,22 @@ on:
       - main
 
 jobs:
-  practice:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show files before checkout
-        run: ls -la
+      - name: Build
+        run: echo "Building the application..."
 
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Build completed
+        run: echo "Build completed successfully!"
 
-      - name: Show files after checkout
-        run: ls -la
+  test:
+    runs-on: ubuntu-latest
 
-      - name: Show current directory
-        run: pwd
+    steps:
+      - name: Test
+        run: echo "Running tests..."
 
-      - name: Show Git status
-        run: git status
+      - name: Test completed
+        run: echo "Tests completed successfully!"
