@@ -1,28 +1,15 @@
-name: GitHub Actions Practice - Lab 3
+name: GitHub Actions Practice - Lab 4
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
-  build:
+  practice:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Build
-        run: echo "Building the application..."
+      - name: Say Hello
+        run: echo "This workflow was started manually!"
 
-      - name: Build completed
-        run: echo "Build completed successfully!"
-
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Test
-        run: echo "Running tests..."
-
-      - name: Test completed
-        run: echo "Tests completed successfully!"
+      - name: Show date
+        run: date
